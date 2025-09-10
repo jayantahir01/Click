@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WhatsApp Quick Button</title>
+  <style>
+    body {font-family: system-ui, Arial, sans-serif; display:grid; place-items:center; min-height:100dvh; background:#0b1220; margin:0;}
+    .btn {
+      appearance:none; border:0; cursor:pointer;
+      padding:14px 22px; border-radius:14px; font-weight:600; font-size:16px;
+      background:#25D366; color:#0b1220; box-shadow:0 6px 20px rgba(37,211,102,.4);
+      transition: transform .08s ease, filter .2s ease;
+    }
+    .btn:active { transform: translateY(1px) scale(.99); filter:brightness(.95); }
+    .note {color:#cbd5e1; margin-top:14px; font-size:12px; opacity:.85;}
+  </style>
+</head>
+<body>
+
+  <button class="btn" id="waBtn">Chat on WhatsApp</button>
+  <div class="note">Fixed number & message are set inside the code.</div>
+
+  <script>
+    // --- FIXED SETTINGS (edit these two lines only if you ever need to change) ---
+    const FIXED_PHONE_WITH_COUNTRY_CODE = "9023315952"; // e.g. 91 + 9876543210 (no + or spaces)
+    const FIXED_MESSAGE = "hey ! bro muje aek website banani he muje banake do ge";
+    // ------------------------------------------------------------------------------
+
+    // Build a universal WhatsApp link (works on mobile & desktop web)
+    const waUrl = `https://wa.me/${FIXED_PHONE_WITH_COUNTRY_CODE}?text=${encodeURIComponent(FIXED_MESSAGE)}`;
+
+    document.getElementById("waBtn").addEventListener("click", () => {
+      // Try opening the universal link
+      window.open(waUrl, "_blank", "noopener,noreferrer");
+    });
+
+    // Optional: Also support the native app deep-link if you prefer (uncomment below)
+    // const appUrl = `whatsapp://send?phone=${FIXED_PHONE_WITH_COUNTRY_CODE}&text=${encodeURIComponent(FIXED_MESSAGE)}`;
+    // document.getElementById("waBtn").addEventListener("click", () => {
+    //   // First try native app, then fallback to web
+    //   const a = document.createElement("a");
+    //   a.href = appUrl;
+    //   document.body.appendChild(a);
+    //   a.click();
+    //   setTimeout(() => window.open(waUrl, "_blank", "noopener,noreferrer"), 600);
+    // }, { once: true });
+  </script>
+</body>
+</html>
