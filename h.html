@@ -1,0 +1,92 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Packages</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #0b0c10;
+        color: white;
+        text-align: center;
+    }
+
+    h1 {
+        margin-top: 20px;
+        font-size: 2rem;
+    }
+
+    .container {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card {
+        width: 300px;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 1.8rem;
+        color: white;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .btn {
+        margin-top: 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<H2>website order package</H2>
+
+<div class="container">
+    <div class="card">
+        500. (simple)
+        <br>
+        <button class="btn" onclick="openFile('what.html')">Select</button>
+    </div>
+    <div class="card">
+        1k. (simple but effective)
+        <br>
+        <button class="btn" onclick="openFile('what.html')">Select</button>
+    </div>
+    <div class="card">
+        2k. (medium)
+        <br>
+        <button class="btn" onclick="openFile('what.html')">Select</button>
+    </div>
+    <div class="card">
+        5k. (The website you are on)
+        <br>
+        <button class="btn" onclick="openFile('what.html')">Select</button>
+    </div>
+</div>
+
+<script>
+function openFile(fileName) {
+    window.location.href = fileName;
+}
+</script>
+
+</body>
+</html>
